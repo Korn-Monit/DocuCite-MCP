@@ -1,5 +1,5 @@
 # Create server parameters for stdio connection
-from mcp import ClientSession, StdioServerParameters
+from hackathon.mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
 from langchain_mcp_adapters.tools import load_mcp_tools
