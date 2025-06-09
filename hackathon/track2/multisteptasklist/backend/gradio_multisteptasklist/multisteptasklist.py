@@ -80,29 +80,46 @@ class MultiStepTaskList(FormComponent):
             preserved_by_key=preserved_by_key,
         )
 
-    def preprocess(self, payload: str | None) -> str | None:
-        """
-        Parameters:
-            payload: the text entered in the textarea.
-        Returns:
-            Passes text value as a {str} into the function.
-        """
-        return None if payload is None else str(payload)
+    # def preprocess(self, payload: str | None) -> str | None:
+    #     """
+    #     Parameters:
+    #         payload: the text entered in the textarea.
+    #     Returns:
+    #         Passes text value as a {str} into the function.
+    #     """
+    #     return None if payload is None else str(payload)
+    def preprocess(self, payload: list[str] | None) -> list[str] | None:
+        # Accepts a list of thoughts from the frontend
+        if payload is None:
+            return []
+        return list(payload)
 
-    def postprocess(self, value: str | None) -> str | None:
-        """
-        Parameters:
-            value: Expects a {str} returned from function and sets textarea value to it.
-        Returns:
-            The value to display in the textarea.
-        """
-        return None if value is None else str(value)
+    # def postprocess(self, value: str | None) -> str | None:
+    #     """
+    #     Parameters:
+    #         value: Expects a {str} returned from function and sets textarea value to it.
+    #     Returns:
+    #         The value to display in the textarea.
+    #     """
+    #     return None if value is None else str(value)
+    def postprocess(self, value: list[str] | None) -> list[str] | None:
+        # Returns the list of thoughts to the frontend
+        if value is None:
+            return []
+        return list(value)
 
+    # def api_info(self) -> dict[str, Any]:
+    #     return {"type": "string"}
     def api_info(self) -> dict[str, Any]:
-        return {"type": "string"}
+        return {"type": "array", "items": {"type": "string"}}
 
+
+    # def example_payload(self) -> Any:
+    #     return "Hello!!"
     def example_payload(self) -> Any:
-        return "Hello!!"
+        return ["Analyzing user question...", "Searching for weather info..."]
 
+    # def example_value(self) -> Any:
+    #     return "Hello!!"
     def example_value(self) -> Any:
-        return "Hello!!"
+        return ["Analyzing user question...", "Searching for weather info..."]
