@@ -1,0 +1,10 @@
+gradio
+pdfplumber
+numpy
+torch
+langchain
+langchain-community
+langchain-openai
+langgraph
+sentence-transformers
+chromadb    
