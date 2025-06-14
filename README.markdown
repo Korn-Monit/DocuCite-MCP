@@ -1,6 +1,6 @@
 # DocuCite-AI
 
-[Demo](https://github.com/user-attachments/assets/24056190-9413-4bb3-9918-fcd739b690a5)
+[Demo](https://github.com/user-attachments/assets/e31d825d-1647-4444-a6ea-400d567c4cec)
 
 _A collaborative project by Monit KORN and Setthika SUN_
 
